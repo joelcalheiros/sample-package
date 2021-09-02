@@ -4,6 +4,8 @@ dist
 dist-ssr
 *.local
 
+yarn-error.log
+
 /coverage/lcov-report
 /coverage/coverage-final.json
 /coverage/lcov.info
