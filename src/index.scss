@@ -3,6 +3,12 @@
 @import "~@esolidar/toolkit/build/assets/sass/mixins";
 @import "~@esolidar/toolkit/build/assets/sass/fonts";
 
+// eSolidar Toolkit Vendors Styles
+@import "~@esolidar/toolkit/build/assets/sass/vendors/index";
+
+// eSolidar Toolkit Components Styles
+@import "~@esolidar/toolkit/build/assets/sass/components/index";
+
 // App Global Styles
 @import "./assets/sass/variables";
 @import "./assets/sass/fonts";

@@ -5,9 +5,9 @@ import Props from "./TestComponent.types";
 const TestComponent: FC<Props> = ({ title }: Props): JSX.Element => {
   return (
     <>
-      <div style={{ color: "red" }}>red</div>
-      <div className="teste">
-        {title} - <FormattedMessage id="yes" />
+      <div className="teste">{title}</div>
+      <div style={{ color: "red" }}>
+        <FormattedMessage id="yes" />
       </div>
     </>
   );
