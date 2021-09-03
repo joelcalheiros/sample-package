@@ -4,15 +4,12 @@
   "author": "Joel Calheiros",
   "license": "MIT",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
     "storybook": "start-storybook -p 6006",
+    "test": "jest --coverage -u --maxWorkers=50% --colors --env=jsdom --json --outputFile=.jest-test-results.json || true",
+    "test:lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "build:dev": "rollup -c ./rollup.config.dev.js",
     "build:publish": "rollup -c ./rollup.config.prod.js && npm publish",
     "build-storybook": "build-storybook",
-    "test": "jest --coverage -u --maxWorkers=50% --colors --env=jsdom --json --outputFile=.jest-test-results.json || true",
-    "test:lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
     "prettier": "pretty-quick --staged --pattern '**/*.js' --pattern '**/*.ts'"
   },
   "dependencies": {},
