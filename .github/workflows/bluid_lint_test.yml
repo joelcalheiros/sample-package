@@ -12,9 +12,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           always-auth: true
-          node-version: "12.x"
+          node-version: '12.x'
           registry-url: https://npm.pkg.github.com
-          scope: "@esolidar"
+          scope: '@esolidar'
 
       - name: Install dependencies
         run: yarn --pure-lockfile --production=false
@@ -27,17 +27,17 @@ jobs:
           path: ./*
           key: ${{ github.sha }}
 
-  # lint:
-  #   name: Run code lint
-  #   runs-on: ubuntu-latest
-  #   needs: install
-  #   steps:
-  #     - uses: actions/cache@v2
-  #       id: restore-build
-  #       with:
-  #         path: ./*
-  #         key: ${{ github.sha }}
-  #     - run: yarn test:lint
+  lint:
+    name: Run code lint
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/cache@v2
+        id: restore-build
+        with:
+          path: ./*
+          key: ${{ github.sha }}
+      - run: yarn test:lint
 
   test:
     name: Run tests

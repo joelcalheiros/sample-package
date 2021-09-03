@@ -1,13 +1,13 @@
-import { Story, Meta } from "@storybook/react";
-import React from "react";
-import TestComponent from "./TestComponent";
-import Props from "./TestComponent.types";
+import { Story, Meta } from '@storybook/react';
+import React from 'react';
+import TestComponent from './TestComponent';
+import Props from './TestComponent.types';
 
 export default {
-  title: "Sprint41/DetailTitle",
+  title: 'Sprint41/DetailTitle',
   component: TestComponent,
   parameters: {
-    jest: ["TestComponent.test.tsx"],
+    jest: ['TestComponent.test.tsx'],
   },
 } as Meta;
 
@@ -20,5 +20,5 @@ const Template: Story<Props> = (args: Props) => (
 export const Default: Story<Props> = Template.bind({});
 
 Default.args = {
-  title: "Test Component",
+  title: 'Test Component',
 };

@@ -1,12 +1,12 @@
-import React from "react";
-import View from "./View";
+import React from 'react';
+import View from './View';
 
 export default {
-  title: "Views/View",
+  title: 'Views/View',
   component: View,
 };
 
-const Template = (args) => <View {...args} />;
+const Template = args => <View {...args} />;
 
 export const Default = Template.bind({});
 

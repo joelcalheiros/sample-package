@@ -11,17 +11,21 @@
     "build:dev": "rollup -c ./rollup.config.dev.js",
     "build:publish": "rollup -c ./rollup.config.prod.js && npm publish",
     "build-storybook": "build-storybook",
-    "test": "jest --coverage -u --maxWorkers=50% --colors --env=jsdom --json --outputFile=.jest-test-results.json || true"
+    "test": "jest --coverage -u --maxWorkers=50% --colors --env=jsdom --json --outputFile=.jest-test-results.json || true",
+    "test:lint": "eslint ./src --ext .js,.jsx,.ts,.tsx",
+    "prettier": "pretty-quick --staged --pattern '**/*.js' --pattern '**/*.ts'"
   },
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.15.0",
+    "@babel/eslint-parser": "^7.15.4",
     "@babel/plugin-proposal-class-properties": "^7.14.5",
     "@babel/plugin-transform-react-jsx": "^7.14.9",
     "@babel/plugin-transform-runtime": "^7.15.0",
     "@babel/preset-env": "^7.15.0",
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
+    "@esolidar/eslint-config-esolidar": "^0.0.10",
     "@esolidar/i18n": "^0.0.210",
     "@esolidar/toolkit": "^3.6.4",
     "@esolidar/types": "^0.1.9",
@@ -54,9 +58,19 @@
     "classnames": "^2.3.1",
     "css-loader": "^3.4.0",
     "enzyme": "^3.11.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-react": "^7.22.0",
+    "husky": "^7.0.2",
     "jest": "^27.1.0",
     "moment-timezone": "^0.5.33",
     "postcss": "^8.3.6",
+    "prettier": "^2.3.2",
+    "pretty-quick": "^3.1.1",
     "react": "^17.0.0",
     "react-bootstrap": "^1.6.1",
     "react-cropper": "^2.1.8",
@@ -105,6 +119,11 @@
       "global": {
         "lines": 63
       }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test -u && yarn test:lint && yarn prettier"
     }
   }
 }
